@@ -1,0 +1,14 @@
+# MACOS
+.DS_Store
+
+# Node file
+node_modules
+
+# Angular files
+dist
+.angular
+
+# Ignore certs folder, specific and secret to each host
+certs
+data
+.env

@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app-dcd:
+    build:
+      context: .
+      args:
+        - CONFIGURATION=$APP_DCD_CONFIGURATION
+    container_name: app-dcd
+    environment:
+     - NGINX_HOST=$APP_DCD_HOST
+     - NGINX_PORT=$APP_DCD_PORT
+    restart: on-failure
