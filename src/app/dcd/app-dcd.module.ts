@@ -22,9 +22,6 @@ import { GoProThingComponent } from './go-pro-thing/go-pro-thing.component';
 import { SAVER, getSaver } from './services/saver.provider';
 import { SpinnerButtonComponent } from './spinner-button/spinner-button.component';
 import { PropertyTypesComponent } from './property-types/property-types.component';
-import { ErrorPageComponent } from 'app/public-doc/error-page/error-page.component';
-import { PersonAppComponent } from './person-app/person-app.component';
-import { GroupsComponent } from './groups/groups.component';
 
 @NgModule({
   imports: [
@@ -46,10 +43,7 @@ import { GroupsComponent } from './groups/groups.component';
     SharedPropertiesComponent,
     SharedPropertiesStatsComponent,
     SpinnerButtonComponent,
-    PropertyTypesComponent,
-    ErrorPageComponent,
-    PersonAppComponent,
-    GroupsComponent
+    PropertyTypesComponent
   ],
   providers: [
     ThingService,

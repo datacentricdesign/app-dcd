@@ -14,10 +14,6 @@ import { ReferencesComponent } from './references/references.component';
 import { TermsComponent } from './terms/terms.component';
 import { TutorialsComponent } from './tutorials/tutorials.component';
 import { MarkdownPipe } from 'app/markdown.pipe';
-import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
-import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
-import { SignOutPageComponent } from './sign-out-page/sign-out-page.component';
-import { ConsentPageComponent } from './consent-page/consent-page.component';
 
 @NgModule({
   imports: [
@@ -36,11 +32,7 @@ import { ConsentPageComponent } from './consent-page/consent-page.component';
     ReferencesComponent,
     TermsComponent,
     TutorialsComponent,
-    MarkdownPipe,
-    SignInPageComponent,
-    SignUpPageComponent,
-    SignOutPageComponent,
-    ConsentPageComponent,
+    MarkdownPipe
   ],
   providers: [
     

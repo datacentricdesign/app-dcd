@@ -4,7 +4,6 @@
   "environment": "development",
   "basehref": "",
   "apiURL": "https://dwd.tudelft.nl/bucket/api",
-  "profileAPIURL": "https://dwd.tudelft.nl/profile/api",
   "grafanaURL": "https://dwd.tudelft.nl/grafana",
   "authCodeFlow": {
     "issuer": "https://dwd.tudelft.nl:443/",
