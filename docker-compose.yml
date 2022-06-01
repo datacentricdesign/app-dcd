@@ -16,8 +16,8 @@ services:
     image: envoyproxy/envoy-alpine:v1.19-latest
     container_name: envoy
     ports:
-      - 80:8080
-      - 443:8443
+      - 80:80
+      - 443:443
     volumes:
       - ./config/envoy/envoy.yaml:/etc/envoy/envoy.yaml
       - ./certs:/etc/certs
