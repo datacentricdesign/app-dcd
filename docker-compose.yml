@@ -11,6 +11,8 @@ services:
      - NGINX_HOST=$APP_DCD_HOST
      - NGINX_PORT=$APP_DCD_PORT
     restart: on-failure
+    networks:
+      - dcd-net
 
   envoy:
     image: envoyproxy/envoy-alpine:v1.19-latest
