@@ -63,6 +63,8 @@ static_resources:
                 filename: '/etc/certs/dcdlab_org.crt'
               private_key:
                 filename: '/etc/certs/dcdlab_org.key'
+              password:
+                filename: '/etc/certs/dcdlab_org.pass'
 
   clusters:
   - name: app-dcd
