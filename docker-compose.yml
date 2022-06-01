@@ -21,6 +21,8 @@ services:
     volumes:
       - ./config/envoy/envoy.yaml:/etc/envoy/envoy.yaml
       - ./certs:/etc/certs
+    environment:
+     - PASSPHRASE=$PASSPHRASE
     networks:
       - dcd-net
 
