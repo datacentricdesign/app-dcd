@@ -64,7 +64,8 @@ static_resources:
               private_key:
                 filename: '/etc/certs/dcdlab_org.key'
               password:
-                environment_variable: 'PASSPHRASE'
+                filename: '/etc/certs/dcdlab_org.pass'
+                # environment_variable: 'PASSPHRASE'
 
   clusters:
   - name: app-dcd
