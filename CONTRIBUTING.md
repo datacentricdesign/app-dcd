@@ -29,7 +29,7 @@ To run the DCD app locally with docker-compose:
 docker-compose up -d
 ```
 
-You can access the app on [http://localhost:4200/](http://localhost:4200/)
+You can access the app on [http://localhost/](http://localhost/)
 
 To look at the latest logs (tail for online the last x lines, f for listening to incoming logs):
 

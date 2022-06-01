@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  app-dcd:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    container_name: app-dcd
+    volumes:
+      - ./src:/usr/app/src
+      - ./e2e:/usr/app/e2e
+      - ./angular.json:/usr/app/angular.json
+      - ./tsconfig.json:/usr/app/tsconfig.json    
+    networks:
+      - dcd-net
+
+networks:
+  dcd-net:
+    external: true
