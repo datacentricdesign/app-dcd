@@ -13,6 +13,6 @@ export class HowToComponent implements OnInit {
     constructor(private route: ActivatedRoute, private titleService: Title) { }
 
     ngOnInit() {
-        this.titleService.setTitle("How-To - DCD App");
+        this.titleService.setTitle("How-To - DCD Lab");
     }
 }

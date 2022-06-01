@@ -13,6 +13,6 @@ export class ReferencesComponent implements OnInit {
     constructor(private route: ActivatedRoute, private titleService: Title) { }
 
     ngOnInit() {
-        this.titleService.setTitle("References - DCD App");
+        this.titleService.setTitle("References - DCD Lab");
     }
 }

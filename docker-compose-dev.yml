@@ -14,6 +14,8 @@ services:
       - ./tsconfig.json:/usr/app/tsconfig.json    
     networks:
       - dcd-net
+    ports:
+      - 80:80
 
 networks:
   dcd-net:

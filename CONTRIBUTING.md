@@ -1,8 +1,8 @@
-# Contributing to the DCD App
+# Contributing to the DCD Lab
 
 👍🎉 First off, thanks for taking the time to contribute! 🎉👍
 
-The following is a set of guidelines for contributing to the DCD App, which is hosted in the [datacentricdesign Organization](https://github.com/datacentricdesign) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines for contributing to the DCD Lab, which is hosted in the [datacentricdesign Organization](https://github.com/datacentricdesign) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 #### Table Of Contents
 
@@ -20,7 +20,7 @@ It means that you cannot use this deployment for external devices like phone or 
 
 ### Deployment with Docker Compose
 
-To run the DCD app locally with docker-compose:
+To run the DCD Lab locally with docker-compose:
 
 1. Copy development.env in .env
 2. Run docker-compose

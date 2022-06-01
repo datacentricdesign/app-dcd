@@ -13,6 +13,6 @@ export class PrivacyComponent implements OnInit {
     constructor(private route: ActivatedRoute, private titleService: Title) { }
 
     ngOnInit() {
-        this.titleService.setTitle("Privacy - DCD App");
+        this.titleService.setTitle("Privacy - DCD Lab");
     }
 }

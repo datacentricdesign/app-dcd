@@ -13,6 +13,6 @@ export class TermsComponent implements OnInit {
     constructor(private route: ActivatedRoute, private titleService: Title) { }
 
     ngOnInit() {
-        this.titleService.setTitle("Terms - DCD App");
+        this.titleService.setTitle("Terms - DCD Lab");
     }
 }
