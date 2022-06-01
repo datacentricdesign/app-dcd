@@ -7,8 +7,8 @@
   "grafanaURL": "https://dwd.tudelft.nl/grafana",
   "authCodeFlow": {
     "issuer": "https://dwd.tudelft.nl:443/",
-    "redirectUri": "https://dwd.tudelft.nl:443",
-    "postLogoutRedirectUri": "https://dwd.tudelft.nl:443",
+    "redirectUri": "https://dcdlab.org:443",
+    "postLogoutRedirectUri": "https://dcdlab.org:443",
     "clientId": "clients:app-dcd",
     "responseType": "code",
     "scope": "openid offline profile email dcd:public dcd:things dcd:properties dcd:types dcd:consents",
