@@ -5,13 +5,13 @@ by Alejandra Gomez Ortega
 
 [Django](https://www.djangoproject.com/) is a Python web framework to build web applications. In this tutorial, we use Django to create a python web app that interacts with [Bucket](https://dwd.tudelft.nl/bucket/about) via the [Bucket REST API](https://dwd.tudelft.nl/bucket/api/docs/). Before getting started, email [lab@datacentricdesign.org](mailto:lab@datacentricdesign.org) to request your **client credentials**. 
 
-# Get Started
+## Get Started
 
-## Create a DCD Lab account
+### Create a DCD Lab account
 
 The first step is to [sign up for a Data-Centric Design Lab Account](https://dwd.tudelft.nl/profile/signup) to log in on [Bucket](https://dwd.tudelft.nl/bucket/about). 
 
-## Set Up Your Development Environment
+### Set Up Your Development Environment
 
 It is always a good idea to set up your development environment when starting a web development project. For this, create a directory (folder) for your project, and cd into it.
 
@@ -58,7 +58,7 @@ Finally, you will install [Requests](https://docs.python-requests.org/en/master/
 python -m pip install requests
 ```
 
-## Create a Django Project
+### Create a Django Project
 
 With your virtual environment set up and Django and Authlib installed, you can now dive into the application. First, create the project:
 
@@ -119,7 +119,7 @@ Now, in your web browser, go to [localhost:8000](http://localhost:8000/). You sh
 
 To stop the program, press `CTRL+C`.
 
-## Create a Django Application
+### Create a Django Application
 
 You will now create an app called `bucket_example`. For this, run the following command:
 
@@ -161,7 +161,7 @@ After creating a migration file, you need to apply the migrations set out in the
 python manage.py migrate
 ```
 
-## Configure OAuth2 Authentication
+### Configure OAuth2 Authentication
 
 Now you will configure OAuth2. Here you will get to use your **client credentials**, if you  haven't requested them yet, please email lab@datacentricdesign.org. Your **client credentials** contain sensitive information that should be kept secure. That is why they should be placed in environmental variables and not hard coded in your source code. For this you can create a `.env` file where you can locally store your variables, this file should contain the key value pairs of all the environment variables required. These variables can be then accessed inside your project, like any other variable would be, by using env.
 
@@ -215,11 +215,11 @@ oauth.register(
 ```
 
 
-# Create App Views
+## Create App Views
 
 Inside the `views.py`, you will create the functions that will handle the requests and return responses. To learn more about views you can visit the  [Django Documentation](https://docs.djangoproject.com/en/3.2/topics/http/views/). You already registered the remote bucket application in your `views.py`. Now you will create the following functions:
 
-### Home
+#### Home
 
 You will define a **view function** called `home()`. When this function is called, it will render an HTML file called  `bucket_example.html` (this file doesn't exist yet, you will create it soon). The `home()` function takes one argument: `request` an `HttpRequestObject` that is created when a page is loaded and contains information about the request.
 
@@ -231,7 +231,7 @@ def home(request):
     return render(request, 'bucket_example.html', context={'user': user})
 ```
 
-### Login
+#### Login
 
 The `login()` function will redirect to Bucket for authentication.
 
@@ -258,7 +258,7 @@ def auth(request):
     return redirect('/bucket/')
 ```
 
-### Logout
+#### Logout
 The `logout()` function will remove the user from the session.
 
 ```python
@@ -267,11 +267,11 @@ def bucket_logout(request):
     return redirect('/bucket/')
 ```
 
-# Interact with Bucket's REST API
+## Interact with Bucket's REST API
 
 Having retrieved the **access token**, you can now interact with Bucket. For this, you will use the requests library, you can find more about how it works in the [Requests Documentation](https://docs.python-requests.org/en/master/). Also, you can always go to the [Bucket REST API Documentation](https://dwd.tudelft.nl/bucket/api/docs/).
 
-### Create a Thing
+#### Create a Thing
 
 Here you will create a **thing** with the name *My Thing from Django*. To find more about this step, go to [Bucket REST API: Thing - Create](https://dwd.tudelft.nl/bucket/api/docs/#api-Thing-PostThings).
 
@@ -297,7 +297,7 @@ def create_thing(request):
     return render(request, 'bucket_login.html', context={'user': request.session['user'], 'thing_id': response.json()["id"]})
 ```
 
-### Create a Property
+#### Create a Property
 Here you will create a **property** with the name *My Property from Django*. To find more about this step, go to [Bucket REST API: Property - Create](https://dwd.tudelft.nl/bucket/api/docs/#api-Property-PostThingsThingidProperties). 
 
 ```python
@@ -326,7 +326,7 @@ def create_property(request):
                                                             'property_id': response.json()["id"]})
 ```
 
-### Update a Property
+#### Update a Property
 
 Here you will update the **property** you recently created, by adding random values. To find more about this step go to [Bucket REST API: Property - Update Values](https://dwd.tudelft.nl/bucket/api/docs/#api-Property-PutThingsThingidPropertiesPropertyid). 
 
@@ -363,7 +363,7 @@ def update_property(request):
                                                             'update' : update})
 ```
 
-### Read a Property
+#### Read a Property
 
 Finally, you will read the **property** you recently created, and added values to. To find more about this step go to [Bucket REST API: Property - Read](https://dwd.tudelft.nl/bucket/api/docs/#api-Property-GetThingsThingidPropertiesPropertyid).
 
@@ -389,7 +389,7 @@ def read_property(request):
                                                           'update' : update,})
 ```
 
-# Create Django Templates
+## Create Django Templates
 
 In your `bucket_example` app create the subfolder **templates**, inside this folder you will create one file, corresponding to the HTML template to display to the user. For simplicity you will create a basic login view named `bucket_login.html`, containing several links that will let you log in, create a thing, create a property, update the property with random values, and finally read the property values and display them.
 
@@ -416,7 +416,7 @@ In your `bucket_example` app create the subfolder **templates**, inside this fol
 {% endif %}
 ```
 
-# Set Django URLs
+## Set Django URLs
 
 In your `bucket_example` app create the file **urls.py** and determine the URL configuration for the `bucket_example` application. Add the following: 
 
@@ -452,7 +452,7 @@ This line looks for a module called urls.py inside the `bucket_example` applicat
 
 ![Login view](https://github.com/datacentricdesign/app-dcd/raw/main/docs/tutorials/images/app-django/django_login.png)
 
-# Extra: Django Models
+## Extra: Django Models
 
 Django has a built-in [Object Relational Mapper (ORM)](https://docs.djangoproject.com/en/3.2/topics/db/models/) that allows you to create classes that correspond to database tables. Class attributes correspond to columns, and instances of the classes to rows. In your Django application, you can build these classes in `models.py`. In this tutorial, you won't be storing any data, therefore you won't use the `models.py`. If you are interested in expanding the functionalities of your application you should definitely read more about this, a good place to get started is the [Django Documentation](https://docs.djangoproject.com/en/3.2/topics/db/models/).
 
