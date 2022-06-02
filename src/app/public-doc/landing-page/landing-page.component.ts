@@ -6,8 +6,7 @@ import { AppService } from 'app/app.service';
 
 @Component({
   selector: 'app-landing-page',
-  templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.css']
+  templateUrl: './landing-page.component.html'
 })
 export class LandingPageComponent implements OnInit {
 

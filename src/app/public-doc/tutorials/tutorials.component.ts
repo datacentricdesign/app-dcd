@@ -10,9 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 
 export class TutorialsComponent implements OnInit {
 
+    public text: string;
+    public id: string
+
     constructor(private route: ActivatedRoute, private titleService: Title) { }
 
-    ngOnInit() {
-        this.titleService.setTitle("Tutorials - DCD Lab");
+    async ngOnInit() {
+        this.route.paramMap.subscribe(async params => {
+            this.titleService.setTitle("Tutorials - DCD Lab");
+            this.id = 'README'
+            console.log(params.get('id'))
+            if (params.get('id') !== null) {
+                this.id = params.get('id');
+            }
+            const response = await fetch('https://raw.githubusercontent.com/datacentricdesign/app-dcd/master/docs/tutorials/' + this.id + '.md');
+            this.text = await response.text();
+        })
     }
+        
 }

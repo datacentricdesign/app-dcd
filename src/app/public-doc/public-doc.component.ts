@@ -20,8 +20,7 @@ export const ROUTES: RouteInfo[] = [getStartedRoute, tutorialsRoute, howToRoute,
 
 @Component({
   selector: 'app-public-doc',
-  templateUrl: './public-doc.component.html',
-  styleUrls: ['./public-doc.component.scss']
+  templateUrl: './public-doc.component.html'
 })
 export class PublicDocComponent implements OnInit {
 

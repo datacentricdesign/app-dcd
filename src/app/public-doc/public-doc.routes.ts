@@ -32,6 +32,10 @@ export const PublicDocRoutes: Routes = [
         component: TutorialsComponent
       },
       {
+        path: 'tutorials/:id',
+        component: TutorialsComponent
+      },
+      {
         path: 'how-to',
         component: HowToComponent
       },

@@ -1,73 +1,11 @@
-<h1>Tutorials</h1>
-
 <div class="row">
-  <div class="col-lg-6 col-md-9 col-sm-12">
-    <p>
-      We assemble here a collection of tutorial to help you get started with specific functionalities of Bucket, such as
-      setting up a Thing or and Application.
-    </p>
-  </div>
-</div>
-
-<h2>Things</h2>
-
-<div class="row">
-  <div class="col-lg-4 col-md-6 col-sm-12">
-
+  <div class="col-lg-9 col-md-9 col-sm-12">
     <div class="card card-stats">
       <div class="card-header">
-        <h2>Raspberry Pi</h2>
+        
       </div>
       <div class="card-body">
-        <p>Live Data Prototype with a Raspberry Pi</p>
-
-        <p>
-          Tutorial: <a href="https://datacentricdesign.github.io/code/data-centric-design/bucket-raspberrypi/"
-            target="_blank">Bucket and Raspberry Pi</a>
-        </p>
-      </div>
-
-      <div class="card-footer">
-      </div>
-    </div>
-  </div>
-
-
-  <div class="col-lg-4 col-md-6 col-sm-12">
-    <div class="card card-stats">
-      <div class="card-header">
-        <h2>Arduino</h2>
-      </div>
-      <div class="card-body">
-        Coming soon...
-      </div>
-
-      <div class="card-footer">
-      </div>
-    </div>
-  </div>
-</div>
-
-<h2>Apps</h2>
-
-<div class="row">
-  <div class="col-lg-4 col-md-6 col-sm-12">
-
-    <div class="card card-stats">
-      <div class="card-header">
-        <h2>Django</h2>
-      </div>
-      <div class="card-body">
-        <p>Prototype a web app with Django that interact with Bucket.</p>
-
-        <p>
-          Tutorial: <a href="https://datacentricdesign.github.io/code/data-centric-design/bucket-python-web-app/"
-            target="_blank">Bucket Python Web App</a>
-        </p>
-
-        <p>
-          Template: <a href="https://github.com/datacentricdesign/angular-template" target="_blank">Code Repository</a>
-        </p>
+        <p [innerHTML]="text | markdown"></p>
       </div>
 
       <div class="card-footer">
@@ -75,24 +13,31 @@
     </div>
 
   </div>
-
-  <div class="col-lg-4 col-md-6 col-sm-12">
-
+  <div class="col-lg-3 col-md-3 col-sm-12">
     <div class="card card-stats">
       <div class="card-header">
-        <h2>Angular</h2>
+        <h2>Tutorials</h2>
       </div>
       <div class="card-body">
-        <p>Prototype an web app with Angular that interact with Bucket.</p>
-
-        <p>
-          Template: <a href="https://github.com/datacentricdesign/angular-template" target="_blank">Code Repository</a>
-        </p>
+        <ul>
+          <li>
+            <a href="/tutorials/thing-raspberrypi">Prototype a Thing with Raspberry Pi</a>
+          </li>
+          <li>
+            <a href="/tutorials/thing-arduino">Prototype a Thing with Arduino</a>
+          </li>
+          <li>
+            <a href="/tutorials/app-django">Prototype a Web App with Django</a>
+          </li>
+          <li>
+            <a href="/tutorials/app-angular">Prototype a Web App with Angular</a>
+          </li>
+        </ul>
       </div>
 
       <div class="card-footer">
       </div>
     </div>
-
   </div>
+
 </div>
