@@ -34,7 +34,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "https://dwd.tudelft.nl/",
+              "baseHref": "https://dcdlab.org/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
