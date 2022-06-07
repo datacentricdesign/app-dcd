@@ -5,54 +5,41 @@ import { ActivatedRoute } from '@angular/router';
 import { SwaggerUIBundle } from 'swagger-ui-dist';
 
 @Component({
-    selector: 'app-references-cmp',
-    moduleId: module.id,
-    templateUrl: 'references.component.html'
+  selector: 'app-references-cmp',
+  moduleId: module.id,
+  templateUrl: 'references.component.html'
 })
 
 export class ReferencesComponent implements OnInit {
 
-    constructor(private route: ActivatedRoute, private titleService: Title) { }
 
-    ngOnInit() {
-        this.titleService.setTitle("References - DCD Lab");
+  public text: string;
+  public id: string
 
-        // const MyCustomPlugin = function() {
-        //     return {
-        //       wrapComponents: {
-        //         // add text above InfoContainer - same effect as above title
-        //         InfoContainer: (Original, { React }) => (props) => {
-        //             console.log(props)
-        //           return React.createElement("div", null,
-        //             React.createElement("h3", null, "I'm above the InfoContainer"),
-        //             React.createElement(Original, props)
-        //           )
-        //         },
-        
-        //         // and/or add text above API description
-        //         InfoUrl: (Original, { React }) => (props) => {
-        //           return React.createElement("div", null,
-        //             React.createElement(Original, props),
-        //             React.createElement("h3", null, "I'm above the API description")
-        //           )
-        //         },
+  constructor(private route: ActivatedRoute, private titleService: Title) { }
 
-        //         Info: () => null
-        //       }
-        //     }
-        //   }
-
+  ngOnInit() {
+    this.route.paramMap.subscribe(async params => {
+      this.titleService.setTitle("References - DCD Lab");
+      this.id = 'README'
+      if (params.get('id') !== null) {
+        this.id = params.get('id');
+      }
+      if (this.id === 'bucket-http') {
+        this.text = "";
         const ui = SwaggerUIBundle({
-            dom_id: '#swagger-ui-bucket',
-            layout: 'BaseLayout',
-            // plugins: [
-            //     MyCustomPlugin
-            //   ],
-            presets: [
-              SwaggerUIBundle.presets.apis,
-              SwaggerUIBundle.SwaggerUIStandalonePreset
-            ],
-            url: 'https://raw.githubusercontent.com/datacentricdesign/bucket/master/openapi/openapi.json'
-          });
-    }
+          dom_id: '#swagger-ui',
+          layout: 'BaseLayout',
+          presets: [
+            SwaggerUIBundle.presets.apis,
+            SwaggerUIBundle.SwaggerUIStandalonePreset
+          ],
+          url: 'https://raw.githubusercontent.com/datacentricdesign/bucket/master/openapi/openapi.json'
+        });
+      } else {
+        const response = await fetch('https://raw.githubusercontent.com/datacentricdesign/app-dcd/master/docs/references/' + this.id + '.md');
+        this.text = await response.text();
+      }
+    })
+  }
 }

@@ -28,6 +28,10 @@ export const PublicDocRoutes: Routes = [
         component: ReferencesComponent
       },
       {
+        path: 'references/:id',
+        component: ReferencesComponent
+      },
+      {
         path: 'tutorials',
         component: TutorialsComponent
       },
