@@ -37,6 +37,7 @@ export class ReferencesComponent implements OnInit {
           url: 'https://raw.githubusercontent.com/datacentricdesign/bucket/master/openapi/openapi.json'
         });
       } else {
+        document.getElementById('swagger-ui').innerHTML = "";
         const response = await fetch('https://raw.githubusercontent.com/datacentricdesign/app-dcd/master/docs/references/' + this.id + '.md');
         this.text = await response.text();
       }

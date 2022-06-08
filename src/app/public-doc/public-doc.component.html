@@ -13,10 +13,17 @@
             </div>
             <ul class="nav">
                 <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
-                    <a [routerLink]="[menuItem.path]">
+                    <a [routerLink]="[menuItem.path]" (click)="expand(menuItem.path)">
                         <i class="nc-icon {{menuItem.icon}} {{menuItem.type}}"></i>
                         <p>{{menuItem.title}}</p>
                     </a>
+                    <ul class="nav" id="children{{menuItem.path}}" *ngIf="menuItem.children" style="padding: 0px 0px 0px 60px;margin:0;display:none">
+                        <li *ngFor="let child of menuItem.children" routerLinkActive="active" class="{{child.class}}" style="padding: 0;margin:0">
+                            <a [routerLink]="[child.path]" style="padding: 0;margin:0">
+                                <i class="nc-icon {{child.icon}} {{child.type}}"></i> {{child.title}}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
