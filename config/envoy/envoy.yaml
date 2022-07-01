@@ -69,7 +69,7 @@ static_resources:
           common_tls_context:
             tls_certificates:
             - certificate_chain:
-                filename: '/etc/certs/dcdlab_org.crt'
+                filename: '/etc/certs/dcd_ide_tudelft_nl.crt'
               private_key:
                 filename: '/etc/certs/dcdlab_org.key'
               password:
