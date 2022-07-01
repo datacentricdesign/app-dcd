@@ -40,6 +40,15 @@ static_resources:
           route_config:
             name: local_route
             virtual_hosts:
+            - name: local
+              domains:
+              - "dcd.ide.tudelft.nl"
+              routes:
+              - match:
+                  prefix: "/"
+                redirect:
+                  host_redirect: "dcdlab.org"
+                  https_redirect: true
             - name: backend
               domains:
               - "*"
